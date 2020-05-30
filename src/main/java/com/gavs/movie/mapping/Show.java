@@ -17,7 +17,9 @@ public class Show {
     @Column( name = "show_timing")
     private String showTiming;
     @Column( name = "seat_count")
-    private String seatCount;
+    private Integer totalSeat;
+    @Column( name = "avilable_seat")
+    private Integer availableSeat;
 //
 //    @ManyToMany(fetch = FetchType.LAZY)
 //    @JoinColumn(name = "movie_id")
@@ -47,14 +49,6 @@ public class Show {
         this.showTiming = showTiming;
     }
 
-    public String getSeatCount() {
-        return seatCount;
-    }
-
-    public void setSeatCount(String seatCount) {
-        this.seatCount = seatCount;
-    }
-
     public Long getId() {
         return id;
     }
@@ -62,7 +56,24 @@ public class Show {
     public void setId(Long id) {
         this.id = id;
     }
-//
+
+    public Integer getTotalSeat() {
+        return totalSeat;
+    }
+
+    public void setTotalSeat(Integer totalSeat) {
+        this.totalSeat = totalSeat;
+    }
+
+    public Integer getAvailableSeat() {
+        return availableSeat;
+    }
+
+    public void setAvailableSeat(Integer availableSeat) {
+        this.availableSeat = availableSeat;
+    }
+
+    //
 //    public Movie getMovie() {
 //        return movie;
 //    }

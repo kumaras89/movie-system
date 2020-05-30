@@ -3,7 +3,6 @@ package com.gavs.movie.mapping;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table( name = "movie")
@@ -20,8 +19,9 @@ public class Movie {
     private String actors;
     @Column( name= "directed_by")
     private String directedBy;
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "movieId")
-    private Set<Show> shows;
+
+    @Transient
+    private List<Show> shows;
 
     public Integer getId() {
         return id;
@@ -63,11 +63,11 @@ public class Movie {
         this.directedBy = directedBy;
     }
 
-    public Set<Show> getShows() {
+    public List<Show> getShows() {
         return shows;
     }
 
-    public void setShows(Set<Show> shows) {
+    public void setShows(List<Show> shows) {
         this.shows = shows;
     }
 }
